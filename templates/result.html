@@ -2,18 +2,41 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Result</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Result</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
-<body>
-    <div class="container">
-        <h1>Result</h1>
-        <p><strong>Name:</strong> {{ name }}</p>
-        <p><strong>Roll No:</strong> {{ roll_no }}</p>
-        <p><strong>Total:</strong> {{ total }}</p>
-        <p><strong>Percentage:</strong> {{ percentage }}%</p>
-        <p><strong>Grade:</strong> {{ grade }}</p>
-        <a href="/">Enter Another Result</a>
+<body class="page page-result">
+    <div class="card result-card">
+        <div class="card-header">
+            <span class="eyebrow">Result Summary</span>
+            <h1>Student Performance</h1>
+        </div>
+
+        <div class="result-grid">
+            <div class="result-item">
+                <span>Name</span>
+                <strong>{{ name }}</strong>
+            </div>
+            <div class="result-item">
+                <span>Roll No</span>
+                <strong>{{ roll_no }}</strong>
+            </div>
+            <div class="result-item">
+                <span>Total Marks</span>
+                <strong>{{ total }}</strong>
+            </div>
+            <div class="result-item highlight">
+                <span>Percentage</span>
+                <strong>{{ percentage }}%</strong>
+            </div>
+            <div class="result-item grade-box">
+                <span>Grade</span>
+                <strong>{{ grade }}</strong>
+            </div>
+        </div>
+
+        <a href="/" class="primary-link">Enter Another Result</a>
     </div>
 </body>
 </html>

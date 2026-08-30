@@ -2,29 +2,46 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Result Entry</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
-<body>
-    <div class="container">
-        <h1>Enter Student Marks</h1>
-        <form action="/submit" method="POST">
-            <label>Student Name</label>
-            <input type="text" name="name" required>
+<body class="page page-entry">
+    <div class="card form-card">
+        <div class="card-header">
+            <span class="eyebrow">Academic Portal</span>
+            <h1>Enter Student Marks</h1>
+        </div>
 
-            <label>Roll Number</label>
-            <input type="text" name="roll_no" required>
+        <form action="/submit" method="POST" class="result-form">
+            <div class="field-group">
+                <label for="name">Student Name</label>
+                <input id="name" type="text" name="name" placeholder="e.g. Aisha Khan" required>
+            </div>
 
-            <label>Subject 1 Marks (0-100)</label>
-            <input type="number" name="marks1" min="0" max="100" required>
+            <div class="field-group">
+                <label for="roll_no">Roll Number</label>
+                <input id="roll_no" type="text" name="roll_no" placeholder="e.g. 2024-101" required>
+            </div>
 
-            <label>Subject 2 Marks (0-100)</label>
-            <input type="number" name="marks2" min="0" max="100" required>
+            <div class="marks-grid">
+                <div class="field-group">
+                    <label for="marks1">Subject 1</label>
+                    <input id="marks1" type="number" name="marks1" min="0" max="100" placeholder="0-100" required>
+                </div>
 
-            <label>Subject 3 Marks (0-100)</label>
-            <input type="number" name="marks3" min="0" max="100" required>
+                <div class="field-group">
+                    <label for="marks2">Subject 2</label>
+                    <input id="marks2" type="number" name="marks2" min="0" max="100" placeholder="0-100" required>
+                </div>
 
-            <button type="submit">Submit</button>
+                <div class="field-group">
+                    <label for="marks3">Subject 3</label>
+                    <input id="marks3" type="number" name="marks3" min="0" max="100" placeholder="0-100" required>
+                </div>
+            </div>
+
+            <button type="submit">Submit Result</button>
         </form>
     </div>
 </body>
